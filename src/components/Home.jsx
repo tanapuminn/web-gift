@@ -48,6 +48,8 @@ const Home = () => {
                 type='password'
                 onChange={setCode}
                 length={6}
+                inputMode='numeric'
+                pattern="\d*"
                 onComplete={handleConfirm}
                 format={k => k.toUpperCase()}
                 value={code}

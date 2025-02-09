@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import ReplyRoundedIcon from '@mui/icons-material/ReplyRounded';
 import Button from '@mui/material/Button';
-// import imgDay from '../assets/image7.gif'
+import { useNavigate } from 'react-router-dom';
 import imgDay from '../assets/img1.png'
 
 const Day = () => {
@@ -10,6 +10,7 @@ const Day = () => {
     const [showYearMonth, setShowYearMonth] = useState(false);
     const [showDays, setShowDays] = useState(false);
     const [showTime, setShowTime] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         setTimeout(() => setIsVisible(true), 100); // Delay ให้ดูนุ่มนวล
@@ -60,7 +61,7 @@ const Day = () => {
                 <h2>เราคบกันนานแค่ไหนแล้วน้าาา</h2>
             </div>
             <div className="flex justify-center">
-                <img src={imgDay} alt="Cute kitten with flowers" className="object-cover" />
+                <img src={imgDay} alt="Cute kitten with flowers" className="object-cover md:w-1/4 h-1/4" />
             </div>
             <div className="mt-4 mb-5 p-2 rounded-xl bg-[#ffdfed] hover:shadow-lg">
                 <p className={`text-2xl font-bold text-[#ff0037] transition-opacity duration-700 ${showYearMonth ? "opacity-100" : "opacity-0"}`}>
@@ -74,9 +75,13 @@ const Day = () => {
                 </p>
             </div>
             <div className="mb-4">
-                <Button href="/home" variant="contained" startIcon={<ReplyRoundedIcon />}>
+                <button className="mt-10 px-6 py-3 bg-[#ff006a] rounded-2xl hover:bg-pink-200 cursor-pointer transition-transform duration-200 ease-in-out transform hover:-translate-y-1 active:translate-y-0" onClick={() => navigate('/home')}>
+                    <span className="text-red-500 text-xl">❌</span>
+                    <span className="text-gray-700 font-medium">Back</span>
+                </button>
+                {/* <Button href="/home" variant="contained" startIcon={<ReplyRoundedIcon />}>
                     Back
-                </Button>
+                </Button> */}
             </div>
         </div>
     )
