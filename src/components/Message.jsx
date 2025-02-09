@@ -9,7 +9,7 @@ const Message = () => {
             {!click ? (
                 <div className="relative w-72 h-96 bg-pink-500 rounded-2xl shadow-lg flex flex-col items-center justify-center p-4">
                     {/* ข้อความด้านบน */}
-                    <h2 className="text-white text-lg font-semibold">Happy Aniversary 4 Year!</h2>
+                    <h2 className="text-white text-lg font-semibold">Happy Anniversary 4 Year!</h2>
 
                     {/* ปุ่มกด */}
                     <button className="mt-10 px-6 py-3 bg-white rounded-full shadow-md flex items-center space-x-2 hover:bg-pink-200 cursor-pointer transition-transform duration-200 ease-in-out transform hover:-translate-y-1 active:translate-y-0" onClick={() => setClick(true)}>
